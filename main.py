@@ -20,12 +20,17 @@ print(sales)
 x_train, x_test, y_train, y_test = train_test_split(months, sales, test_size=0.33, random_state=0)
 print("x train:", y_test)
 
-standart_scaler = StandardScaler()
+"""standart_scaler = StandardScaler()
 
 X_train = standart_scaler.fit_transform(x_train)
 X_test = standart_scaler.fit_transform(x_test)
 
 Y_train = standart_scaler.fit_transform(y_train)
 Y_test = standart_scaler.fit_transform(y_test)
+"""
+# modelin oluşturulması
+linear_regression = LinearRegression()
+linear_regression.fit(x_train, y_train)
 
-
+predict = linear_regression.predict(x_test)
+print(predict)
