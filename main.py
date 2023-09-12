@@ -34,3 +34,13 @@ linear_regression.fit(x_train, y_train)
 
 predict = linear_regression.predict(x_test)
 print(predict)
+
+x_train = x_train.sort_index()
+y_train = y_train.sort_index()
+plt.plot(x_train, y_train)
+plt.plot(x_test, predict)
+
+plt.title("Aylara göre satış")
+plt.xlabel("Aylar")
+plt.ylabel("Satışlar")
+plt.show()
